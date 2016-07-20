@@ -1,0 +1,8 @@
+.classpath
+.project
+.settings/
+bin/
+#we want pack - small foot print for Manifest
+# we want the jar too
+pack/org
+
