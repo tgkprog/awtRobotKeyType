@@ -121,7 +121,7 @@ public class RobotHelper {
 			robot.keyPress(KeyEvent.VK_ENTER);
 			// LangUtils.sleep(delay);
 			robot.keyRelease(KeyEvent.VK_ENTER);
-			Thread.sleep(5000);
+			Thread.sleep(100);
 		} catch (Exception e) {
 			System.out.println( "Robot sendKeys :" + e);
 			e.printStackTrace();
