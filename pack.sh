@@ -2,10 +2,11 @@ cd <ur loc</RobotTyper/
 javac -d ./bin -cp ./src src/org/s2n/ddt/util/*.java
 
 
-cd bin
+##cd bin
+nohup java -cp bin org.s2n.ddt.util.EnterKeys 100 1 &
 
-java -cp . org.s2n.ddt.util.EnterKeys 130 230
-java -cp . org.s2n.ddt.util.SendKeys " a msg \\nok"
+java -cp bin org.s2n.ddt.util.EnterKeys 5000 130 230
+java -cp bin org.s2n.ddt.util.SendKeys " a msg \\nok"
 
 
 cp -R * ../pack
