@@ -6,3 +6,4 @@ bin/
 # we want the jar too
 pack/org
 
+nohup.out
