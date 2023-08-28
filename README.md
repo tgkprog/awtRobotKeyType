@@ -1,13 +1,28 @@
-# awtRobotKeyType
+# Java Awt Robot Key Type
 
-Usage 1:
-org.s2n.ddt.util.SendKeys "<String>"
+## Usage 1:
 
-param 1 is the string that is iterated to send keys for enter key \\n
+```
+java org.s2n.ddt.util.SendKeys "<String>" 
+```        
 
-Usage 2 :
-org.s2n.ddt.util.EnterKeys <count>
-Number of enter keys to send with initial sleep 2 seconds and then 110 milli seconds between each key
+  Param 1 is the string that is iterated to send keys for enter key `\\n`
 
-Usage 2(a) :
-org.s2n.ddt.util.EnterKeys <count>
+## Usage 2 :
+
+```
+java org.s2n.ddt.util.EnterKeys <count>
+```
+    
+ Number of enter keys (count) to send with initial sleep 2 seconds and then 110 milli seconds between each key
+
+### Usage 2(a) :
+    
+```
+java org.s2n.ddt.util.EnterKeys <count>
+```
+# About
+Desktop utility. Uses Java awt Robot class. Does not create its own window. Invoke command and it sends keys to active window (could be terminal or notepad or any other active window).
+
+# Author 
+Tushar Kapila   [sel2in](https://sel2in.com/ "sel2in website") || [stack overflow](https://stackoverflow.com/users/1643558/tgkprog "stack overflow tgkprog") || [on twitter](https://twitter.com/tushar_Kapila/ "On twitter")
