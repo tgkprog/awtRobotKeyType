@@ -2,10 +2,10 @@
 # cd <ur loc RobotTyper>
 
 # mkdir bin
-
+set +e
 cd bin
-if( $ERROR ) then
-    echo "Error: $ERROR"
+if [ $? -ne 0 ]; then
+    echo "Error 'bin' directory $? $ERROR $ERROR_MSG"
     exit 1
 fi
 rm -Rf *
@@ -19,14 +19,32 @@ cd bin
 
 # java -cp bin org.s2n.ddt.util.EnterKeys 5000 130 230
 # java -cp bin org.s2n.ddt.util.SendKeys " a msg \\nok"
-
-
-cp * ../pack
+echo "in bin " `pwd`
 cd ../pack
+if [ $? -ne 0 ]; then
+    echo "Error 'pack' directory $ERROR $ERROR_MSG"
+    exit 1
+fi
+pwd
+echo "rm "
+rm -Rf *
+echo cp
+
+cd ../bin/ 
+cp -R * ../pack/
+cd ../pack/
+cp -R ../META-INF .
+
+ls
+
+sleep 2
+jar cf ../RobotTyper1.jar *
+echo "jar 2"
 jar cvfM ../RobotTyper.jar *
-jar cvf ../RobotTyper.jar *
 cd ..
 nohup gedit >null 2>null &
 sleep 1
-java -jar RobotTyper.jar "test\nit"
+#java -cp RobotTyper1.jar org.s2n.ddt.util.SendKeys  "test\\nit"
+
+java -jar RobotTyper.jar  "test\\nit"
 #
